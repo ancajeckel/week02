@@ -9,19 +9,18 @@ namespace CheckUniqueCharactersInString
             Console.WriteLine("Enter string:");
             var str = Console.ReadLine();
 
-            var arr = str.ToCharArray();
             var list = "";
             bool has_unique = true;
 
-            for (int i = 0; i < arr.Length; i++)
+            for (int i = 0; i < str.Length; i++)
             {
-                if (list.Contains(arr[i]))
+                if (list.Contains(str.Substring(i,1)))
                 {
                     Console.WriteLine("String has repeating characters!");
                     has_unique = false;
                     break;
                 }
-                list = list + arr[i];
+                list = list + str.Substring(i, 1);
             }
 
             if (has_unique)
